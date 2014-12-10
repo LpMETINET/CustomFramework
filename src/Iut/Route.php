@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: user01
- * Date: 09/12/14
- * Time: 16:11
- */
 
 namespace Iut;
 

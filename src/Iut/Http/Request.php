@@ -1,5 +1,5 @@
 <?php
-namespace Iut;
+namespace Iut\Http;
 
 class Request
 {

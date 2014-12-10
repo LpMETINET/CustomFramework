@@ -3,6 +3,8 @@
 namespace Iut;
 
 
+use Iut\Http\Request;
+
 class RouteNotFoundException extends \LogicException {
     public function __construct(Request $request)
     {

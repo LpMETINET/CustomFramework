@@ -1,6 +1,8 @@
 <?php
 
-namespace Iut;
+namespace Iut\Http;
+
+use Iut\InvalidHeaderException;
 
 class Header
 {

@@ -3,6 +3,8 @@
 namespace Iut;
 
 
+use Iut\Http\Request;
+
 interface ControllerResolverInterface
 {
     /**

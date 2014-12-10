@@ -8,7 +8,7 @@
 
 namespace Iut\Controller;
 
-use Iut\Response;
+use Iut\Http\Response;
 
 class ErrorController
 {

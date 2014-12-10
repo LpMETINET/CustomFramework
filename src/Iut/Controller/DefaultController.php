@@ -2,21 +2,45 @@
 
 namespace Iut\Controller;
 
-use Iut\Response;
+use Iut\Http\Response;
+use Iut\Views\ViewRenderer;
 
-class DefaultController {
+class DefaultController
+{
+    private $viewRenderer;
 
-    public function homepageAction()
+    public function __construct()
     {
-        $response = new Response(200, 'Page home');
-
-        return $response;
+        $this->viewRenderer = new ViewRenderer(__DIR__ . '/../Views/');
     }
-
     public function aboutAction()
     {
-        $response = new Response(200, 'Page about');
+        $view = $this->viewRenderer->render(
+          "about.html.php",
+          [
+              "titre"     => "je sapel About",
+              "headTitle" => "about"
+          ]
+        );
 
-        return $response;
+        return $this->createResponse($view);
+    }
+
+    public function homePageAction()
+    {
+        $view = $this->viewRenderer->render(
+            "about.html.php",
+            [
+                "titre"     => "je sapel Homepage",
+                "headTitle" => "homepage"
+            ]
+        );
+
+        return $this->createResponse($view);
+    }
+
+    public function createResponse($body)
+    {
+        return new Response(200, $body);
     }
 } 

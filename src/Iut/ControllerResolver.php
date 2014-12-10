@@ -2,6 +2,8 @@
 
 namespace Iut;
 
+use Iut\Http\Request;
+
 class ControllerResolver implements ControllerResolverInterface
 {
     private $matcher;

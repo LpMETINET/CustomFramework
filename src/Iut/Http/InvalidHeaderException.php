@@ -1,6 +1,6 @@
 <?php
 
-namespace Iut;
+namespace Iut\Http;
 
 class InvalidHeaderException extends \InvalidArgumentException
 {
