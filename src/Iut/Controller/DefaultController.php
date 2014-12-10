@@ -13,26 +13,27 @@ class DefaultController
     {
         $this->viewRenderer = new ViewRenderer(__DIR__ . '/../Views/');
     }
-    public function aboutAction()
+
+    public function homePageAction()
     {
         $view = $this->viewRenderer->render(
-          "about.html.php",
-          [
-              "titre"     => "je s'apel About",
-              "headTitle" => "about"
-          ]
+            "homepage.html.php",
+            [
+                "title" => "je s'apel Homepage",
+                "headTitle" => "homepage"
+            ]
         );
 
         return $this->createResponse($view);
     }
 
-    public function homePageAction()
+    public function aboutAction()
     {
         $view = $this->viewRenderer->render(
             "about.html.php",
             [
-                "titre"     => "je s'apel Homepage",
-                "headTitle" => "homepage"
+                "title" => "je s'apel About",
+                "headTitle" => "about"
             ]
         );
 
