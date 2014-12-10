@@ -1,3 +1,3 @@
 <head>
-    <title><?= $parameters['headTitle']; ?></title>
+    <title><?= $parameters['headTitle'] ?></title>
 </head>
