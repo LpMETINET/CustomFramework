@@ -1,0 +1,16 @@
+{
+    "name": "user01/poo.dev",
+    "authors": [
+        {
+            "name": "BOUKOUFALLAH Brahim",
+            "email": "boukoufallah.brahim@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {},
+    "autoload": {
+        "psr-0": {
+            "": "src/"
+        }
+    }
+}
