@@ -1,2 +1,2 @@
-Custom Framwork in PHP
+Custom Framework in PHP
 ======================
