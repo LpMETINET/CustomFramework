@@ -32,13 +32,13 @@ class Header
 
     private function checkName($name)
     {
-        if (!preg_match('/.*/i', $name)) {
+        if (!preg_match('/[a-z-]*/i', $name)) {
             throw InvalidHeaderException::name($name);
         }
     }
 
     private function checkValue($name, $value) {
-        if (!preg_match('/.*/i', $value)) {
+        if (!preg_match('/[a-z\/-]*/i', $value)) {
             throw InvalidHeaderException::value($name, $value);
         }
     }
