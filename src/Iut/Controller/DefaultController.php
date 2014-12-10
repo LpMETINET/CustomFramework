@@ -19,7 +19,7 @@ class DefaultController
         $view = $this->viewRenderer->render(
             "homepage.html.php",
             [
-                "title" => "je s'apel Homepage",
+                "title" => "je s'appel Homepage",
                 "headTitle" => "homepage"
             ]
         );
@@ -32,7 +32,7 @@ class DefaultController
         $view = $this->viewRenderer->render(
             "about.html.php",
             [
-                "title" => "je s'apel About",
+                "title" => "je s'appel About",
                 "headTitle" => "about"
             ]
         );
