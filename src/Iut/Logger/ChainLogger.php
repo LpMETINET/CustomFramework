@@ -7,7 +7,7 @@ class ChainLogger implements LoggerInterface
 
     private $loggers;
 
-    public function __contruct(array $loggers = [])
+    public function __construct(array $loggers = [])
     {
         foreach ($loggers as $logger) {
             $this->addLogger($logger);
@@ -20,6 +20,13 @@ class ChainLogger implements LoggerInterface
     {
         foreach($this->loggers as $logger) {
             $logger->log($message);
+        }
+    }
+
+    public function warn($message)
+    {
+        foreach($this->loggers as $logger) {
+            $logger->warn($message);
         }
     }
 
