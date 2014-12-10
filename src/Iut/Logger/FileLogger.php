@@ -23,4 +23,4 @@ class FileLogger implements LoggerInterface
     {
         $this->log('[warning] ' . $message);
     }
-} 
+}

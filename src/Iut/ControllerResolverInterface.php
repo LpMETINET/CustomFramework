@@ -2,7 +2,6 @@
 
 namespace Iut;
 
-
 use Iut\Http\Request;
 
 interface ControllerResolverInterface
@@ -12,4 +11,4 @@ interface ControllerResolverInterface
      * @return callable
      */
     public function resolve(Request $request);
-} 
+}

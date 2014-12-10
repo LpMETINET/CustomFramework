@@ -2,7 +2,6 @@
 
 namespace Iut;
 
-
 class Route
 {
     private $url;
@@ -30,6 +29,4 @@ class Route
     {
         return $this->action;
     }
-
-
-} 
+}

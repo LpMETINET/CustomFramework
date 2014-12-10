@@ -16,6 +16,7 @@ $request = Request::createFromGlobals();
 
 $homepageRoute = new Route('/', 'GET', '\Iut\Controller\DefaultController::homepageAction');
 $aboutRoute    = new Route('/about', 'GET', '\Iut\Controller\DefaultController::aboutAction');
+
 try {
     $matcher            = new RouteMatcher([$homepageRoute, $aboutRoute]);
     $controllerResolver = new ControllerResolver($matcher);

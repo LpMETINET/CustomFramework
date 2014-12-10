@@ -1,4 +1,5 @@
 <?php
+
 namespace Iut\Http;
 
 class Request
@@ -18,6 +19,9 @@ class Request
         $this->query    = $query;
     }
 
+    /**
+     * Factory Pattern
+     */
     static public function createFromGlobals()
     {
         $headers = [];

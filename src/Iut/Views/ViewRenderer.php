@@ -20,4 +20,4 @@ class ViewRenderer
 
         return $view;
     }
-} 
+}

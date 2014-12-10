@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: user01
- * Date: 10/12/14
- * Time: 10:59
- */
 
 namespace Iut\Controller;
 
@@ -21,4 +15,4 @@ class ErrorController
     {
         return new Response(500, "Une erreur incconnue est survenue");
     }
-} 
+}

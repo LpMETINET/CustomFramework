@@ -27,4 +27,4 @@ class ChainLogger implements LoggerInterface
     {
         $this->loggers[] = $logger;
     }
-} 
+}

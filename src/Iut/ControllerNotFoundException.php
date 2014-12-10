@@ -2,7 +2,6 @@
 
 namespace Iut;
 
-
 class ControllerNotFoundException extends \LogicException {
     public function __construct($className)
     {
@@ -13,4 +12,4 @@ class ControllerNotFoundException extends \LogicException {
             )
         );
     }
-} 
+}

@@ -32,4 +32,4 @@ class ExceptionHandler
 
         return [new ErrorController(), $action];
     }
-} 
+}

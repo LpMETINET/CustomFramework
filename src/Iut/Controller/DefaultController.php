@@ -18,7 +18,7 @@ class DefaultController
         $view = $this->viewRenderer->render(
           "about.html.php",
           [
-              "titre"     => "je sapel About",
+              "titre"     => "je s'apel About",
               "headTitle" => "about"
           ]
         );
@@ -31,7 +31,7 @@ class DefaultController
         $view = $this->viewRenderer->render(
             "about.html.php",
             [
-                "titre"     => "je sapel Homepage",
+                "titre"     => "je s'apel Homepage",
                 "headTitle" => "homepage"
             ]
         );
@@ -43,4 +43,4 @@ class DefaultController
     {
         return new Response(200, $body);
     }
-} 
+}

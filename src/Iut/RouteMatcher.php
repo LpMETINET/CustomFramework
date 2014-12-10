@@ -2,7 +2,6 @@
 
 namespace Iut;
 
-
 use Iut\Http\Request;
 
 class RouteMatcher

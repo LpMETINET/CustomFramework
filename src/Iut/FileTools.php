@@ -2,7 +2,6 @@
 
 namespace Iut;
 
-
 class FileTools
 {
     /**
@@ -35,4 +34,4 @@ class FileTools
             touch($fullPathName);
         }
     }
-} 
+}

@@ -26,4 +26,4 @@ class ControllerResolver implements ControllerResolverInterface
 
         return [$controller, $action];
     }
-} 
+}

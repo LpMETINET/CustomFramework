@@ -5,5 +5,5 @@ namespace Iut\Controller;
 
 class UserController
 {
-    
+
 }

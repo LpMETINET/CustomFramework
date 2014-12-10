@@ -2,8 +2,6 @@
 
 namespace Iut\Http;
 
-use Iut\InvalidHeaderException;
-
 class Header
 {
     private $name;

@@ -2,7 +2,6 @@
 
 namespace Iut;
 
-
 use Iut\Http\Request;
 
 class RouteNotFoundException extends \LogicException {
@@ -16,4 +15,4 @@ class RouteNotFoundException extends \LogicException {
             )
         );
     }
-} 
+}
