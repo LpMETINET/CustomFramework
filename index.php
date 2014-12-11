@@ -14,8 +14,8 @@ use Iut\Controller\DefaultController;
 use Iut\Controller\UserController;
 use Iut\Controller\ErrorController;
 use Iut\Views\PhpViewRenderer;
-use \Iut\Config\PhpLoader;
-use \Iut\Config\Configuration;
+use Iut\Config\PhpLoader;
+use Iut\Config\Configuration;
 use Iut\Route;
 
 $request = Request::createFromGlobals();

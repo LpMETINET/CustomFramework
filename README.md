@@ -17,4 +17,4 @@ $ composer install
 $ php -S localhost:8000
 ```
 
-You're ready to go at your [Local](http://localhost:8000]
+You're ready to go at: http://localhost:8000
