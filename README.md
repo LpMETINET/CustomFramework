@@ -4,7 +4,7 @@ Custom Framework based on Symfony2
 
 # Clone project
 ```sh
-$ git clone http://git.thebigbrainscompany.com/borisguery/frameworkmetinet.git
+$ git clone https://github.com/LpMETINET/CustomFramework.git
 ```
 # Install dependencies
 ```sh
