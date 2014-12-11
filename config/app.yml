@@ -1,0 +1,23 @@
+views:
+    directory: "./../views/"
+
+routes:
+    register:
+        url: "/register",
+        method: "GET",
+        action: "\Iut\Controller\DefaultController::homepageAction"
+
+    about:
+        url: "/about"
+        method: "GET",
+        action: "\Iut\Controller\DefaultController::aboutAction"
+
+    register:
+        url: '/register',
+        method: 'GET',
+        action: '\Iut\Controller\UserController::registerAction'
+
+    profile:
+        url: '/register',
+        method: 'GET',
+        action: '\Iut\Controller\UserController::registerAction'

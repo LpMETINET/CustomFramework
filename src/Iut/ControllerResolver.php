@@ -7,6 +7,7 @@ use Iut\Http\Request;
 class ControllerResolver implements ControllerResolverInterface
 {
     private $matcher;
+    private $controllers;
 
     public function __construct(RouteMatcher $matcher)
     {
@@ -17,13 +18,23 @@ class ControllerResolver implements ControllerResolverInterface
     {
         $action = $this->matcher->match($request);
         $splitAction = explode('::', $action);
-        if (!class_exists($splitAction[0])) {
-            throw new ControllerNotFoundException($splitAction[0]);
+        foreach ($this->controllers as $controller) {
+            if ('\\' . get_class($controller) === $splitAction[0]) {
+                $action = $splitAction[1];
+
+                return [$controller, $action];
+            }
         }
 
-        $controller = new $splitAction[0]();
-        $action = $splitAction[1];
+        throw new ControllerNotFoundException($splitAction[0]);
+    }
 
-        return [$controller, $action];
+    public function addController($controllerInstance)
+    {
+        if (!is_object($controllerInstance)) {
+            throw new \Exception('$controllerInstance must be an instance of Controller');
+        }
+
+        $this->controllers[] = $controllerInstance;
     }
 }

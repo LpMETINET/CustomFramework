@@ -2,7 +2,7 @@
 
 namespace Iut\Views;
 
-class ViewRenderer
+class PhpViewRenderer implements ViewRendererInterface
 {
     private $viewsDirectory;
 

@@ -8,11 +8,13 @@ use Iut\Logger\LoggerInterface;
 class ExceptionHandler
 {
     private $logger;
+    private $errorController;
 
     // Injection de dépendance car exceptionHandler dépend d'une classe Logger
-    public function __construct(LoggerInterface $logger)
+    public function __construct(LoggerInterface $logger, $errorController)
     {
         $this->logger = $logger;
+        $this->errorController = $errorController;
     }
 
     public function handle(\Exception $e)
@@ -25,7 +27,8 @@ class ExceptionHandler
           )
         );
 
-        $action = "genericErrorAction";
+        $action = "defaultErrorAction";
+
         if($e instanceof RouteNotFoundException) {
             $action = "routeNotFoundAction";
         }

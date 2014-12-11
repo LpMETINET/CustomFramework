@@ -2,7 +2,6 @@
 
 namespace Iut;
 
-
 class PermissionDeniedException extends \Exception
 {
     public function __construct($fullPathName)

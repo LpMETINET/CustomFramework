@@ -2,29 +2,19 @@
 
 namespace Iut\Controller;
 
-use Iut\Http\Response;
-use Iut\Views\ViewRenderer;
-
-class DefaultController
+class DefaultController extends AbstractController
 {
-    private $viewRenderer;
-
-    public function __construct()
-    {
-        $this->viewRenderer = new ViewRenderer(__DIR__ . '/../Views/');
-    }
-
     public function homePageAction()
     {
-        $view = $this->viewRenderer->render(
-            "homepage.html.php",
-            [
-                "title" => "je s'appel Homepage",
-                "headTitle" => "homepage"
-            ]
+        return $this->createResponse(
+            $this->viewRenderer->render(
+                "homepage.html.php",
+                [
+                    "title" => "je s'appel Homepage",
+                    "headTitle" => "homepage"
+                ]
+            )
         );
-
-        return $this->createResponse($view);
     }
 
     public function aboutAction()
@@ -38,10 +28,5 @@ class DefaultController
         );
 
         return $this->createResponse($view);
-    }
-
-    public function createResponse($body)
-    {
-        return new Response(200, $body);
     }
 }
