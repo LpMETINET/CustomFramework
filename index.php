@@ -6,26 +6,27 @@ ini_set('display_errors', 1);
 require __DIR__.'/vendor/autoload.php';
 
 use Iut\Http\Request;
-use Iut\Route;
 use Iut\ControllerResolver;
 use Iut\RouteMatcher;
 use Iut\Logger\FileLogger;
 use Iut\Logger\ChainLogger;
-use \Iut\Controller\DefaultController;
-use \Iut\Controller\UserController;
-use \Iut\Controller\ErrorController;
-use \Iut\Views\PhpViewRenderer;
+use Iut\Controller\DefaultController;
+use Iut\Controller\UserController;
+use Iut\Controller\ErrorController;
+use Iut\Views\PhpViewRenderer;
+use \Iut\Config\PhpLoader;
+use \Iut\Config\Configuration;
+use Iut\Route;
 
 $request = Request::createFromGlobals();
+$phpLoader = new PhpLoader([__DIR__ . "/config/app.php"]);
+$configuration = new Configuration($phpLoader);
 
-$routes = [
-    new Route('/', 'GET', '\Iut\Controller\DefaultController::homepageAction'),
-    new Route('/about', 'GET', '\Iut\Controller\DefaultController::aboutAction'),
-    new Route('/register', 'GET', '\Iut\Controller\UserController::registerAction'),
-    new Route('/profile', 'GET', '\Iut\Controller\UserController::viewProfileAction'),
-];
+$viewRenderer = new PhpViewRenderer(__DIR__ . "/config/" . $configuration->getSection("views")["directory"]);
 
-$viewRenderer = new PhpViewRenderer(__DIR__ . "/views/");
+foreach ($configuration->getSection("routes") as $route) {
+    $routes[] = new Route($route["url"], $route["method"], $route["action"]);
+}
 
 try {
     $matcher            = new RouteMatcher($routes);
